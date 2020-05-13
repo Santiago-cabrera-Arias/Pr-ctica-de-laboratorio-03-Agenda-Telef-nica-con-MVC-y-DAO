@@ -125,7 +125,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", contrasena=" + contrasena + ", listaTelefonos=" +telefonos+ '}';
+        return "Usuario{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", contrasena=" + contrasena + ", listaTelefonos=" +telefonos.toString()+ '}';
     }
     
     

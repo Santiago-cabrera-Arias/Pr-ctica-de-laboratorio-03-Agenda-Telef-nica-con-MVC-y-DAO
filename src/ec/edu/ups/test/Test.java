@@ -61,36 +61,47 @@ public class Test {
                 controladorUsuario.registrarUsuario();
                 controladorUsuario.registrarUsuario();
 
+            }else if (seleccion == 2){
+                
+                controladorUsuario.iniciarSesion();
+                
+            }else if (seleccion == 3){
+                
+                
+                System.out.println("---------");
+                System.out.println("Gracias");
+                System.out.println("----------");  
+                bandera = 2;
+                        
             }
 
-            // ver clientes
+            // ver usuarios
             controladorUsuario.verUsuarios();
 
-            // editar un cliente por medio del id        
+            // editar un usuario por medio del usuario        
             controladorUsuario.modificarUsuario();
 
             // ver usuarios
             controladorUsuario.verUsuarios();
 
-            // eliminar un cliente por medio del id
+            // eliminar un usuario por medio del codigo
             controladorUsuario.eliminarUsuario();
 
-            // ver clientes
+            // ver usuarios
             controladorUsuario.verUsuarios();
 
-            // guardar direcciones
+            // guardar ususarios
             controladorTelefono.registrarTel();
-        //controladorDireccion.registrar();
-            //controladorDireccion.registrar();
+       
 
-            //ver direcciones
+            //ver usuarios
             controladorTelefono.verTelefono();
 
-            //asignar direcion
+            //asignar telefonos
             controladorUsuario.verUsuario();
             controladorUsuario.agregarTelefono();
 
-            //ver clientes
+            //ver usuario
             controladorUsuario.verUsuario();
 
         } while (bandera != 2);
