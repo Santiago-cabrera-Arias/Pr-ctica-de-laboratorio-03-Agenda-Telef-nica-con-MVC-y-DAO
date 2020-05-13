@@ -5,9 +5,11 @@
  */
 package ec.edu.ups.controlador;
 
+import ec.edu.ups.dao.TelefonoDAO;
 import ec.edu.ups.dao.UsuarioDAO;
 import ec.edu.ups.modelo.Telefono;
 import ec.edu.ups.vista.VistaTelefono;
+import java.util.List;
 
 
 /**
@@ -19,34 +21,45 @@ public class ControladorTelefono {
  
     private VistaTelefono vistaTelefono;
     private Telefono telefono;
-    private UsuarioDAO usuarioDAO;
-    
+    private TelefonoDAO telefonoDAO;
+
+    public ControladorTelefono(VistaTelefono vistaTelefonoo, TelefonoDAO telefonoDAO) {
+        this.vistaTelefono = vistaTelefono;
+        this.telefonoDAO =  telefonoDAO ;
+    }
+
     public void registrarTel(){
         
-       telefono = vistaTelefono.registrarseTel();
+       telefono = vistaTelefono.ingresarTelefono();
        vistaTelefono.verTelefono(telefono);
     }
-    public void modificarTel (){
+    
+      public void verTelefono() {
+        int codigo = vistaTelefono.buscarTel();
+        telefono = telefonoDAO.read(codigo);
+        vistaTelefono.verTelefono(telefono);
+    }
+
+    
+    
+    public void modificarTel(){
         
-        telefono = vistaTelefono.buscarTelefono();
-        vistaTelefono.modificarTel();
+        telefono = vistaTelefono.modificarTel();
+        telefonoDAO.update(telefono);
         
     }
     
     public void eliminarTel(){
         
-        telefono = vistaTelefono.buscarTelefono();
-        vistaTelefono.eliminarTelefono();
+        telefono = vistaTelefono.eliminarTel();
+        telefonoDAO.delete(telefono);
         
     }
-    public void buscarTel(){
-        
-        telefono = vistaTelefono.buscarTelefono();
-        vistaTelefono.verTelefono(telefono);
-    }
-    
-    
-    
+    public void verTelefonos() {
+        List<Telefono> telefonos;
+        telefonos = telefonoDAO.findAll();
+        vistaTelefono.verTelfonos(telefonos);
+    } 
     
     
     

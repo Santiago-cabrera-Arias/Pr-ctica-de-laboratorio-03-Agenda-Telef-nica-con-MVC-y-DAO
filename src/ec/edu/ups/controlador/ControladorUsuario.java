@@ -32,6 +32,7 @@ public class ControladorUsuario {
         this.usuarioDao = usuarioDao;
         
     }
+    
 
     public void registrarUsuario(){
         
@@ -42,7 +43,9 @@ public class ControladorUsuario {
     
     public void iniciarSesion(){
         
+        
         usuario = vistaUsuario.IniciarSesion();
+        usuario.iniciar();
         
     }
     
@@ -64,13 +67,6 @@ public class ControladorUsuario {
         usuarioDao.delete(usuario);
     }
     
-    public void buscarUsuario(){
-        
-        String cedula = vistaUsuario.buscarUsuario();
-        usuario = usuarioDao.read(cedula);
-        vistaUsuario.verUsuario(usuario);
-    }
-    
     public void verUsuarios(){
         
         List<Usuario>usuarios;
@@ -81,7 +77,7 @@ public class ControladorUsuario {
     
     public void agregarTelefono(){
         
-       int codigo = vistaTelefono.buscarTelefono();
+       int codigo = vistaTelefono.buscarTel();
         telefono = telefonoDao.read(codigo);
         usuario.agregarTelefono(telefono);
         usuarioDao.update(usuario);

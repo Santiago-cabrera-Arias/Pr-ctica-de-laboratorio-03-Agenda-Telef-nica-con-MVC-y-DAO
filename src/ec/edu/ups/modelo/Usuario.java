@@ -1,7 +1,9 @@
 
 package ec.edu.ups.modelo;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -16,10 +18,11 @@ public class Usuario {
     private String apellido;
     private String correo;
     private String contrasena;
-    private List<Telefono> listaTelefonos;
-    
-
+    private List<Telefono> telefonos;
+    private Map <Integer,String> map;
+   
     public Usuario() {
+        
     }
     
     public Usuario(String cedula, String nombre, String apellido, String correo, String contrasena) {
@@ -28,6 +31,14 @@ public class Usuario {
         this.apellido = apellido;
         this.correo = correo;
         this.contrasena = contrasena;
+    }
+    
+    
+    public void iniciar(){
+        map= new HashMap<>();
+        map.put(Integer.SIZE, correo);
+        map.put(Integer.SIZE, contrasena);
+        
     }
 
     public String getCedula() {
@@ -70,18 +81,18 @@ public class Usuario {
         this.contrasena = contrasena;
     }
 
-    public List<Telefono> getListaTelefonos() {
-        return listaTelefonos;
+    public List<Telefono> getTelefonos() {
+        return telefonos;
     }
 
-    public void setListaTelefonos(List<Telefono> listaTelefonos) {
-        this.listaTelefonos = listaTelefonos;
+    public void setListaTelefonos(List<Telefono>telefonos) {
+        this.telefonos = telefonos;
     }
 
-    
+    //agregacion
     public void agregarTelefono(Telefono telefono){
         
-        listaTelefonos.add(telefono);
+        telefonos.add(telefono);
         
     }
     
@@ -114,7 +125,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", contrasena=" + contrasena + ", listaTelefonos=" + listaTelefonos + '}';
+        return "Usuario{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", contrasena=" + contrasena + ", listaTelefonos=" +telefonos+ '}';
     }
     
     

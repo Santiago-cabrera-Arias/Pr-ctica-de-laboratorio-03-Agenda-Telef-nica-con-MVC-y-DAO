@@ -14,76 +14,62 @@ import java.util.Scanner;
  * @author santi
  */
 public class VistaTelefono {
- 
-    
-    
-    Scanner sc = new Scanner(System.in);
+      
+    private Scanner sc;
 
-    public Telefono registrarseTel() {
-
-        System.out.println("Ingrese el codigo:");
-        int codigo = sc.nextInt();
-        System.out.println("Inrgese el numero de telefono:");
-        String telefono = sc.next();
-        System.out.println("Ingrese el tipo de telefono:");
-        String tipo = sc.next();
-        System.out.println("Ingrese la operadora del telefono:");
-        String operadora = sc.next();
-        
-        return new Telefono(codigo,telefono,tipo,operadora);
+    public VistaTelefono() {
+        sc = new Scanner(System.in);
     }
-
-    public Telefono modificarTel() {
-
-        System.out.println("Modificar");
-
-        System.out.println("Ingrese el codigo del telefono que va a modificar");
+    
+    public Telefono ingresarTelefono() {
+        sc = new Scanner(System.in);
+        System.out.println("Ingresa los datos de la direccion");
         int codigo = sc.nextInt();
-
-        System.out.println("Ingrese los nuevos datos: ");
-
-        System.out.println("Ingrese el numero de telefono");
+        
+        System.out.println("Ingrese el numero d telefono");
         String telefono = sc.next();
         System.out.println("Ingrese el tipo de telefono");
         String tipo = sc.next();
-        System.out.println("Ingrese la operadora del telefono");
+        System.out.println("Ingrese la opeadora ");
         String operadora = sc.next();
+        return new Telefono(codigo, telefono, tipo, operadora);
+    }
 
-        return new Telefono(codigo,telefono,tipo,operadora);
-        
-    }
-    
-    public Telefono eliminarTelefono(){
-        
-        System.out.println("Ingrese el codigo del telefono a eliminar");
+    public Telefono modificarTel() {
+        sc = new Scanner(System.in);
+        System.out.println("Ingresa el id de la direccion a actualizar");
         int codigo = sc.nextInt();
-        
-        return new Telefono(codigo,null,null,null); 
+        System.out.println("Ingrese los nuevos Datos ");
+        String telefono = sc.next();
+        String tipo = sc.next();
+        String operadora = sc.next();
+        return new Telefono(codigo, telefono, tipo, operadora);
     }
-    public Telefono buscarTelefono(){
-        
-        System.out.println("Ingrese el codigo del telefono a buscar");
+
+    public Telefono eliminarTel() {
+        sc = new Scanner(System.in);
+        System.out.println("Ingresa el codigo del telefono  a eliminar");
         int codigo = sc.nextInt();
-        
-        return new Telefono(codigo,null,null,null);
-        
+        return new Telefono(codigo, null, null, null);
     }
-    
-    public void verTelefono(Telefono telefono){
-        
-        System.out.println("Telefono: "+telefono);
-        
+
+    public int buscarTel() {
+        sc = new Scanner(System.in);
+        System.out.println("Ingresa el codigo del telefono a buscar");
+        int codigo = sc.nextInt();
+        return codigo;
     }
-    
-    public void verTelefonos(List<Telefono> telefonos){
-        
-        for(Telefono telefono:telefonos){
-            
-            System.out.println("Telefonos: "+telefono);
-            
+
+    public void verTelefono(Telefono telefono) {
+        System.out.println("Datos del Cliente: " + telefono);
+    }
+
+    public void verTelfonos(List<Telefono> telefonos) {
+        for (Telefono telefono : telefonos) {
+            System.out.println("Datos de la direcci´´n: " + telefono);
         }
-        
     }
     
     
+
 }

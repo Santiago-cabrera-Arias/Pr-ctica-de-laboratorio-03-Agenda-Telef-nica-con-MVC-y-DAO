@@ -85,6 +85,16 @@ public class VistaUsuario {
             return cedula;
             
         }
+       public String listarTelefono(){
+           
+           System.out.println("listar telefonos");
+           
+           System.out.println("Ingrese el numero de cedula");
+           String cedula =sc.next();
+           
+           return cedula;
+           
+       }
         
         public void verUsuario(Usuario usuario){
             
