@@ -5,7 +5,9 @@
  */
 package ec.edu.ups.controlador;
 
+import ec.edu.ups.dao.UsuarioDAO;
 import ec.edu.ups.modelo.Telefono;
+import ec.edu.ups.vista.VistaTelefono;
 
 
 /**
