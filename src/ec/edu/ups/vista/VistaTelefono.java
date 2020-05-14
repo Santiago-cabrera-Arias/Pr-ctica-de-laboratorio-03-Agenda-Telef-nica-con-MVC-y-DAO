@@ -23,21 +23,21 @@ public class VistaTelefono {
     
     public Telefono ingresarTelefono() {
         sc = new Scanner(System.in);
-        System.out.println("Ingresa los datos de la direccion");
+        System.out.println("Ingresa el codigo del telefono");
         int codigo = sc.nextInt();
         
-        System.out.println("Ingrese el numero d telefono");
+        System.out.println("Ingrese el numero de telefono");
         String telefono = sc.next();
         System.out.println("Ingrese el tipo de telefono");
         String tipo = sc.next();
-        System.out.println("Ingrese la opeadora ");
+        System.out.println("Ingrese la operadora ");
         String operadora = sc.next();
         return new Telefono(codigo, telefono, tipo, operadora);
     }
 
     public Telefono modificarTel() {
         sc = new Scanner(System.in);
-        System.out.println("Ingresa el id de la direccion a actualizar");
+        System.out.println("Ingresa el codigo del telefono a actualizar");
         int codigo = sc.nextInt();
         System.out.println("Ingrese los nuevos Datos ");
         String telefono = sc.next();
@@ -61,12 +61,12 @@ public class VistaTelefono {
     }
 
     public void verTelefono(Telefono telefono) {
-        System.out.println("Datos del Cliente: " + telefono);
+        System.out.println("Datos del telefono: " + telefono);
     }
 
     public void verTelfonos(List<Telefono> telefonos) {
         for (Telefono telefono : telefonos) {
-            System.out.println("Datos de la direcci´´n: " + telefono);
+            System.out.println("Datos del telefono: " + telefono);
         }
     }
     

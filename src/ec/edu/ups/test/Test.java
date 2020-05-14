@@ -45,7 +45,7 @@ public class Test {
 
                 seleccion = sc.nextInt();
 
-                if (seleccion >= 1 && seleccion <= 7) {
+                if (seleccion >= 1 && seleccion <= 3) {
 
                     bandera = 1;
 
@@ -59,53 +59,71 @@ public class Test {
             if (seleccion == 1) {
                 controladorUsuario.registrarUsuario();
                 controladorUsuario.registrarUsuario();
-                controladorUsuario.registrarUsuario();
 
-            }else if (seleccion == 2){
+                controladorUsuario.verUsuarios();
                 
+
+            } else if (seleccion == 2) {
+
                 controladorUsuario.iniciarSesion();
                 
-            }else if (seleccion == 3){
-                
-                
-                System.out.println("---------");
-                System.out.println("Gracias");
-                System.out.println("----------");  
-                bandera = 2;
                         
+
+                
+                 int opcion; 
+
+                 System.out.println("Ingrese una opcion ");
+
+                 System.out.println("1.modificar");
+                 System.out.println("2.Eliminar");
+                 System.out.println("3.Buscar");
+                 System.out.println("4.listar telefonos");
+
+                 opcion = sc.nextInt();
+
+                 switch (opcion) {
+
+                 case 1:
+                 System.out.println("Modificar");
+
+                 controladorUsuario.modificarUsuario();
+                 
+
+                 break;
+                        
+                 case 2:
+                 System.out.println("Eliminar Usuario");
+
+                 controladorUsuario.eliminarUsuario();
+                 controladorUsuario.verUsuarios();
+                 
+                 break;
+                        
+                 case 3:
+
+                 System.out.println("Buscar usuario");
+
+                     controladorUsuario.buscarUsuario();
+                     
+                
+                 break;
+                        
+                 default: System.out.println("Ingrese una opcion dentro del rango");
+                        
+                 }
+
+                 } else if (seleccion == 3) {
+
+                 System.out.println("---------");
+                 System.out.println("Gracias");
+                 System.out.println("----------");
+                 bandera = 2;
+
+                 }
             }
+            while (bandera != 2);
 
-            // ver usuarios
-            controladorUsuario.verUsuarios();
-
-            // editar un usuario por medio del usuario        
-            controladorUsuario.modificarUsuario();
-
-            // ver usuarios
-            controladorUsuario.verUsuarios();
-
-            // eliminar un usuario por medio del codigo
-            controladorUsuario.eliminarUsuario();
-
-            // ver usuarios
-            controladorUsuario.verUsuarios();
-
-            // guardar ususarios
-            controladorTelefono.registrarTel();
-       
-
-            //ver usuarios
-            controladorTelefono.verTelefono();
-
-            //asignar telefonos
-            controladorUsuario.verUsuario();
-            controladorUsuario.agregarTelefono();
-
-            //ver usuario
-            controladorUsuario.verUsuario();
-
-        } while (bandera != 2);
-
+        
+        }
     }
 
-}
