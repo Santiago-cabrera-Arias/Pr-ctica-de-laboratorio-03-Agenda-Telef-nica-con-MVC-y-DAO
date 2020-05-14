@@ -22,6 +22,7 @@ public class VistaTelefono {
     }
     
     public Telefono ingresarTelefono() {
+        
         sc = new Scanner(System.in);
         System.out.println("Ingresa el codigo del telefono");
         int codigo = sc.nextInt();

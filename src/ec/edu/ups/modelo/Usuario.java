@@ -1,9 +1,9 @@
 
 package ec.edu.ups.modelo;
 
-import java.util.HashMap;
+import com.sun.javafx.scene.control.skin.VirtualFlow;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -19,9 +19,11 @@ public class Usuario {
     private String correo;
     private String contrasena;
     private List<Telefono> telefonos;
-    private Map <Integer,String> map;
-   
+    
+    
     public Usuario() {
+    
+        telefonos = new ArrayList<>();
         
     }
     
@@ -31,15 +33,9 @@ public class Usuario {
         this.apellido = apellido;
         this.correo = correo;
         this.contrasena = contrasena;
+        telefonos = new ArrayList<>();
     }
     
-    
-    public void iniciar(){
-        map= new HashMap<>();
-        map.put(Integer.SIZE, correo);
-        map.put(Integer.SIZE, contrasena);
-        
-    }
 
     public String getCedula() {
         return cedula;
@@ -95,7 +91,30 @@ public class Usuario {
         telefonos.add(telefono);
         
     }
-    
+      
+    public void actualizaTelefono(Telefono telefono) {
+        if (telefonos.contains(telefono)) {
+            int index = telefonos.indexOf(telefono);
+            telefonos.set(index, telefono);
+        }
+    }
+
+    public void eliminarTelefono(Telefono telefono) {
+        if (telefonos.contains(telefono)) {
+            int index = telefonos.indexOf(telefono);
+            telefonos.remove(index);
+        }
+    }
+
+    public List<Telefono> listar() {
+        return telefonos;
+    }
+
+    public Telefono buscarTelefono(int codigo) {
+
+        return telefonos.get(codigo);
+
+    }
     
     
     @Override
@@ -125,7 +144,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", contrasena=" + contrasena + ", listaTelefonos=" +telefonos+ '}';
+        return "Usuario{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", contrasena=" + contrasena + ", Telefono =" +telefonos.toString()+ '}';
     }
     
     

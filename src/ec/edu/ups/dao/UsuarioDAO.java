@@ -50,7 +50,7 @@ public class UsuarioDAO implements IUsuarioDAO {
 
             Usuario us = listaUsuarios.get(i);
 
-            if (us.getCedula() == usuario.getCedula()) {
+            if (us.getCedula() == null ? usuario.getCedula() == null : us.getCedula().equals(usuario.getCedula())) {
 
                 listaUsuarios.set(i, usuario);
 
@@ -69,7 +69,7 @@ public class UsuarioDAO implements IUsuarioDAO {
 
             Usuario us = it.next();
 
-            if (us.getCedula() == usuario.getCedula()) {
+            if (us.getCedula() == null ? usuario.getCedula() == null : us.getCedula().equals(usuario.getCedula())) {
 
                 it.remove();
 

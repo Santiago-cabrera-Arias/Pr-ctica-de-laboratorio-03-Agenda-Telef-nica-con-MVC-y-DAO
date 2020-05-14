@@ -2,12 +2,12 @@ package ec.edu.ups.controlador;
 
 import ec.edu.ups.dao.TelefonoDAO;
 import ec.edu.ups.dao.UsuarioDAO;
+import ec.edu.ups.idao.ITelefonoDAO;
+import ec.edu.ups.idao.IUsuarioDAO;
 import ec.edu.ups.modelo.Telefono;
 import ec.edu.ups.modelo.Usuario;
 import ec.edu.ups.vista.VistaTelefono;
 import ec.edu.ups.vista.VistaUsuario;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -22,12 +22,13 @@ public class ControladorUsuario {
     private Usuario usuario;
     private Telefono telefono;
 
-    private TelefonoDAO telefonoDao;
-    private UsuarioDAO usuarioDao;
+    private ITelefonoDAO telefonoDao;
+    private IUsuarioDAO usuarioDao;
 
     public ControladorUsuario(VistaUsuario vistaUsuario, VistaTelefono vistaTelefono, TelefonoDAO telefonoDao, UsuarioDAO usuarioDao) {
         this.vistaUsuario = vistaUsuario;
         this.vistaTelefono = vistaTelefono;
+        
         this.telefonoDao = telefonoDao;
         this.usuarioDao = usuarioDao;
 
@@ -42,12 +43,9 @@ public class ControladorUsuario {
 
     public void iniciarSesion() {
 
-        if (usuario.equals(this.usuario)) {
-
             usuario = vistaUsuario.IniciarSesion();
-           
-        }
-
+            vistaUsuario.verUsuario(usuario);
+       
     }
 
     public void buscarUsuario() {
@@ -55,6 +53,7 @@ public class ControladorUsuario {
         String cedula = vistaUsuario.buscarUsuario();
         usuario = usuarioDao.read(cedula);
         vistaUsuario.verUsuario(usuario);
+        
 
     }
 
@@ -62,15 +61,19 @@ public class ControladorUsuario {
 
         usuario = vistaUsuario.modificarUsu();
         usuarioDao.update(usuario);
-
+        
     }
 
     public void eliminarUsuario() {
 
         usuario = vistaUsuario.eliminarUsuario();
         usuarioDao.delete(usuario);
+        
     }
-
+    
+   
+    
+ 
     public void verUsuarios() {
 
         List<Usuario> usuarios;

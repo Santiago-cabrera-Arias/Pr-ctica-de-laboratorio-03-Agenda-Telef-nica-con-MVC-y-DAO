@@ -28,18 +28,18 @@ public class Test {
         TelefonoDAO telefonDao = new TelefonoDAO();
         UsuarioDAO usuarioDAO = new UsuarioDAO();
 
-        ControladorTelefono controladorTelefono = new ControladorTelefono(vistaTelefono, telefonDao);
         ControladorUsuario controladorUsuario = new ControladorUsuario(vistaUsuario, vistaTelefono, telefonDao, usuarioDAO);
+        ControladorTelefono controladorTelefono = new ControladorTelefono(vistaTelefono, telefonDao);
 
         do {
             do {
 
-                System.out.println("----------------------");
-                System.out.println("     Menu");
-                System.out.println("----------------------");
-                System.out.println("Escoja una opcion: ");
+                System.out.println("---------------------");
+                System.out.println("        Menu");
+                System.out.println("---------------------");
+                System.out.println("Ingrese una opcion");
 
-                System.out.println("1.Registrarse ");
+                System.out.println("1.Registrar");
                 System.out.println("2.Iniciar Sesion");
                 System.out.println("3.Salir");
 
@@ -48,82 +48,65 @@ public class Test {
                 if (seleccion >= 1 && seleccion <= 3) {
 
                     bandera = 1;
-
                 } else {
 
-                    System.out.println("Escoja una opcion dentro del rango");
+                    System.out.println("Ingrese una opcion dentro del rango");
+
                 }
 
             } while (bandera != 1);
 
             if (seleccion == 1) {
-                controladorUsuario.registrarUsuario();
-                controladorUsuario.registrarUsuario();
 
+                controladorUsuario.registrarUsuario();
+                controladorUsuario.registrarUsuario();
                 controladorUsuario.verUsuarios();
-                
 
             } else if (seleccion == 2) {
 
                 controladorUsuario.iniciarSesion();
-                
-                        
+                controladorUsuario.verUsuarios();
 
-                
-                 int opcion; 
+                int opcion = 0;
 
-                 System.out.println("Ingrese una opcion ");
+                System.out.println("\nIngrese una opcion");
+                System.out.println("1.Modificar");
+                System.out.println("2.Eliminar");
+                System.out.println("3.Buscar");
+                System.out.println("4.Listar");
 
-                 System.out.println("1.modificar");
-                 System.out.println("2.Eliminar");
-                 System.out.println("3.Buscar");
-                 System.out.println("4.listar telefonos");
+                switch (opcion) {
 
-                 opcion = sc.nextInt();
+                    case 1:
 
-                 switch (opcion) {
+                        controladorUsuario.modificarUsuario();
+                        controladorUsuario.verUsuarios();
 
-                 case 1:
-                 System.out.println("Modificar");
+                    case 2:
 
-                 controladorUsuario.modificarUsuario();
-                 
+                        controladorUsuario.eliminarUsuario();
+                        controladorUsuario.verUsuarios();
 
-                 break;
-                        
-                 case 2:
-                 System.out.println("Eliminar Usuario");
+                    case 3:
 
-                 controladorUsuario.eliminarUsuario();
-                 controladorUsuario.verUsuarios();
-                 
-                 break;
-                        
-                 case 3:
+                        controladorUsuario.buscarUsuario();
+                        controladorUsuario.verUsuarios();
 
-                 System.out.println("Buscar usuario");
+                    case 4:
+                        System.out.println("4.Listar ");
 
-                     controladorUsuario.buscarUsuario();
-                     
-                
-                 break;
-                        
-                 default: System.out.println("Ingrese una opcion dentro del rango");
-                        
-                 }
+                }
 
-                 } else if (seleccion == 3) {
+            } else if (seleccion == 3) {
 
-                 System.out.println("---------");
-                 System.out.println("Gracias");
-                 System.out.println("----------");
-                 bandera = 2;
+                System.out.println("---------");
+                System.out.println("Gracias");
+                System.out.println("----------");
 
-                 }
+                bandera = 2;
             }
-            while (bandera != 2);
 
-        
-        }
+        } while (bandera != 2);
+                
     }
-
+}
