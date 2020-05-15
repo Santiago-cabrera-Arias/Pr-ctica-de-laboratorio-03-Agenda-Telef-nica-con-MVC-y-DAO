@@ -34,6 +34,14 @@ public class VistaUsuario {
 
     
     
+    /***
+     * Metodo registrar usuario.
+     * 
+     * Realiza la accion de hacer que el usuario ingrese por teclado los datos
+     * y esta a su vez nos dice si hay un correo o contrasena ya registrada
+     * 
+     * @return 
+     */
     public Usuario registrarseUsu() {
 
         sc = new Scanner(System.in);
@@ -56,6 +64,7 @@ public class VistaUsuario {
             return new Usuario(cedula, nombre, apellido, correo, contrasena);
 
         }else{
+            
             System.out.println("Ya existe el contacto");
             return null;
         
