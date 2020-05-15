@@ -1,10 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * *
+ * Clase vista usuario
+ *
+ * Permite el ingreso de datos en consola y a su vez implementamos HashMap para
+ * mostrar las listas y que las contraseñas y correos no coincidan con otro usuario.
+ *
+ *
  */
 package ec.edu.ups.vista;
-
 import ec.edu.ups.modelo.Usuario;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +15,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author santi
+ * @author santiago Cabrera
  */
 public class VistaUsuario {
 
@@ -20,12 +23,17 @@ public class VistaUsuario {
 
     HashMap<String, String> usu = new HashMap<>();
 
+    
+    //Constructor
+    
     public VistaUsuario() {
 
         sc = new Scanner(System.in);
 
     }
 
+    
+    
     public Usuario registrarseUsu() {
 
         sc = new Scanner(System.in);
@@ -41,9 +49,18 @@ public class VistaUsuario {
         System.out.println("Ingrese su contrasena");
         String contrasena = sc.next();
 
-        usu.put(correo, contrasena);
+        if (!usu.containsKey(correo)) {
 
-        return new Usuario(cedula, nombre, apellido, correo, contrasena);
+            usu.put(correo, contrasena);
+
+            return new Usuario(cedula, nombre, apellido, correo, contrasena);
+
+        }else{
+            System.out.println("Ya existe el contacto");
+            return null;
+        
+        }
+
     }
 
     public String iniciarSesionCorreo() {
