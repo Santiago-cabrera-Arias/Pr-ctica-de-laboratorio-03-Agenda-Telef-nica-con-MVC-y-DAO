@@ -6,14 +6,20 @@ package ec.edu.ups.modelo;
  */
 public class Telefono {
 
+    //Atributos 
+    
     private int codigo;
     private String numero;
     private String tipo;
     private String operadora;
 
+    //constructor
+    
     public Telefono() {
     }
 
+    //constructor vacio
+    
     public Telefono(int codigo, String numero, String tipo, String operadora) {
         this.codigo = codigo;
         this.numero = numero;
@@ -21,6 +27,9 @@ public class Telefono {
         this.operadora = operadora;
     }
 
+    
+    //metodo get y set
+    
     public int getCodigo() {
         return codigo;
     }
@@ -60,6 +69,8 @@ public class Telefono {
         return hash;
     }
 
+    //metodo hashcode y equals
+    
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -75,6 +86,8 @@ public class Telefono {
         return true;
     }
 
+    //metodo toString
+    
     @Override
     public String toString() {
         return "Telefono{" + "codigo=" + codigo + ", numero=" + numero + ", tipo=" + tipo + ", operadora=" + operadora + '}';

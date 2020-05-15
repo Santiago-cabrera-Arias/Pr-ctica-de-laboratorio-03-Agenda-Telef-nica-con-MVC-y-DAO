@@ -6,6 +6,7 @@ import ec.edu.ups.dao.TelefonoDAO;
 import ec.edu.ups.dao.UsuarioDAO;
 import ec.edu.ups.vista.VistaTelefono;
 import ec.edu.ups.vista.VistaUsuario;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -72,6 +73,7 @@ public class Test {
                     System.out.println("1.registrar telefono");
                     System.out.println("2.modifiar telefono");
                     System.out.println("3.Buscar telefono");
+                        System.out.println("4.Agregar telefono");
                     System.out.println("5.listar telefono");
                     System.out.println("6.Atras");
 
@@ -88,8 +90,8 @@ public class Test {
 
                         case 2:
 
-                            controladorTelefono.eliminarTel();
-                            controladorTelefono.verTelefonos();
+                         controladorTelefono.modificarTel();
+                         controladorTelefono.verTelefonos();
 
                             break;
 
@@ -102,21 +104,23 @@ public class Test {
 
                         case 4:
 
-                            
+                            controladorUsuario.agregarTelefono();
+                            controladorUsuario.verUsuarios();
                             
                             break;
                             
                         case 5:
                             
-                            
+                            controladorUsuario.listarTelefono();
                             
                             break;
 
                         case 6:
-
+                            
                             opcion = 6;
-
+                            
                             break;
+                            
 
                         default:
                             System.out.println("Ingrese una opcion dentro del rango");

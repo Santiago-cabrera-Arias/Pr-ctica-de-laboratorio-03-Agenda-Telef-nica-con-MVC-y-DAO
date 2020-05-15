@@ -13,6 +13,8 @@ import java.util.Objects;
 public class Usuario {
     
        
+    //Atributos
+    
     private String  cedula;
     private String nombre;
     private String apellido;
@@ -21,11 +23,15 @@ public class Usuario {
     private List<Telefono> telefonos;
     
     
+    //Constructor
+    
     public Usuario() {
     
         telefonos = new ArrayList<>();
         
     }
+    
+    //Contructor lleno
     
     public Usuario(String cedula, String nombre, String apellido, String correo, String contrasena) {
         this.cedula = cedula;
@@ -36,6 +42,8 @@ public class Usuario {
         telefonos = new ArrayList<>();
     }
     
+    
+    //metodos get y set
 
     public String getCedula() {
         return cedula;
@@ -85,13 +93,25 @@ public class Usuario {
         this.telefonos = telefonos;
     }
 
-    //agregacion
+    // metodo agregacion
     public void agregarTelefono(Telefono telefono){
         
         telefonos.add(telefono);
         
     }
       
+    /***
+     * Metodo actualizar Telefono
+     * 
+     * nos permite actuualizar el telefono utilizamos el metodo
+     * contains este verifica si el String contiene otra subcadena 
+     * o no y nos devuelve un valor booleno
+     * 
+     * indexOF nos devuelve  la posicion mediante un numero entero
+     * 
+     * @param telefono 
+     */
+    
     public void actualizaTelefono(Telefono telefono) {
         if (telefonos.contains(telefono)) {
             int index = telefonos.indexOf(telefono);
@@ -99,6 +119,11 @@ public class Usuario {
         }
     }
 
+    /***
+     * Metodo eliminar telefono
+     * 
+     * @param telefono 
+     */
     public void eliminarTelefono(Telefono telefono) {
         if (telefonos.contains(telefono)) {
             int index = telefonos.indexOf(telefono);

@@ -10,12 +10,12 @@ import java.util.List;
 
 /**
  *
- * @author santi
+ * @author santiago Cabrera
  */
 public interface ITelefonoDAO {
     
        
-    //CRUD
+    // Metodo CRUD
     
     public void create(Telefono telefono);
     public Telefono read (int codigo );

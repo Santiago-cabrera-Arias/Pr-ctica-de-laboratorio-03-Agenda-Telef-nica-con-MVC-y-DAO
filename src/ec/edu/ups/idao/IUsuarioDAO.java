@@ -10,11 +10,11 @@ import java.util.List;
 
 /**
  *
- * @author santi
+ * @author santiago Cabrera
  */
 public interface IUsuarioDAO {
     
-    //CRUD
+    //Metodo CRUD
     
     public void create(Usuario usuario);
     public Usuario read(String cedula);
