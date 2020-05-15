@@ -5,8 +5,8 @@
  */
 package ec.edu.ups.vista;
 
-import ec.edu.ups.dao.UsuarioDAO;
 import ec.edu.ups.modelo.Usuario;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -17,6 +17,8 @@ import java.util.Scanner;
 public class VistaUsuario {
 
     private Scanner sc;
+
+    HashMap<String, String> usu = new HashMap<>();
 
     public VistaUsuario() {
 
@@ -38,6 +40,8 @@ public class VistaUsuario {
         String correo = sc.next();
         System.out.println("Ingrese su contrasena");
         String contrasena = sc.next();
+
+        usu.put(correo, contrasena);
 
         return new Usuario(cedula, nombre, apellido, correo, contrasena);
     }
@@ -119,6 +123,16 @@ public class VistaUsuario {
 
         System.out.println("Ingrese el numero de cedula");
         String cedula = sc.next();
+        System.out.println("Ingrese el correo");
+        String correo = sc.next();
+
+        if (usu.containsKey(cedula) || usu.containsKey(correo)) {
+
+            System.out.println("El telefono es: " + usu.get(cedula));
+
+            System.out.println("El telefono es :" + usu.get(correo));
+
+        }
 
         return cedula;
 
