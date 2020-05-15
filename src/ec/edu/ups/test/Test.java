@@ -1,12 +1,19 @@
 package ec.edu.ups.test;
 
+/**
+ *Clase Principal.
+ * 
+ * Es la encargada de hacer que nuestro programa tenga un menu y de hacer que
+ * nuestra aplicacion funcione en consola.
+ * 
+ */
+
 import ec.edu.ups.controlador.ControladorTelefono;
 import ec.edu.ups.controlador.ControladorUsuario;
 import ec.edu.ups.dao.TelefonoDAO;
 import ec.edu.ups.dao.UsuarioDAO;
 import ec.edu.ups.vista.VistaTelefono;
 import ec.edu.ups.vista.VistaUsuario;
-import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -22,6 +29,8 @@ public class Test {
         int seleccion = 0;
         int bandera = 0;
 
+        //Llamamos a todos los metodos.
+        
         VistaTelefono vistaTelefono = new VistaTelefono();
         VistaUsuario vistaUsuario = new VistaUsuario();
 

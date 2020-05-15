@@ -38,7 +38,7 @@ public class VistaUsuario {
      * Metodo registrar usuario.
      * 
      * Realiza la accion de hacer que el usuario ingrese por teclado los datos
-     * y esta a su vez nos dice si hay un correo o contrasena ya registrada
+     * y esta a su vez nos dice si hay un correo o contrasena ya registrada.
      * 
      * @return 
      */
@@ -72,6 +72,15 @@ public class VistaUsuario {
 
     }
 
+    /**
+     * Metodo inciar Sesion.
+     *
+     * el usuario pueda ingresar los datos en consola.
+     * 
+     * 
+     * @return 
+     */
+    
     public String iniciarSesionCorreo() {
 
         sc = new Scanner(System.in);
@@ -94,6 +103,15 @@ public class VistaUsuario {
 
     }
 
+    
+    /**
+     * Metodo modificar usuario.
+     * 
+     * Permite ingresar datos en consola
+     * 
+     * 
+     * @return 
+     */
     public Usuario modificarUsu() {
 
         sc = new Scanner(System.in);
@@ -117,6 +135,8 @@ public class VistaUsuario {
 
     }
 
+    //Metodo eliminar usuario
+    
     public Usuario eliminarUsuario() {
 
         sc = new Scanner(System.in);
@@ -130,6 +150,8 @@ public class VistaUsuario {
 
     }
 
+    //
+    
     public String buscarUsuario() {
 
         sc = new Scanner(System.in);
@@ -163,6 +185,14 @@ public class VistaUsuario {
         return cedula;
 
     }
+    
+    /**
+     * Merodo ver usuario.
+     * 
+     * podemos llamar a este metodo para ver al usuario.
+     * 
+     * @param usuario 
+     */
 
     public void verUsuario(Usuario usuario) {
 
@@ -170,6 +200,14 @@ public class VistaUsuario {
 
     }
 
+    /**
+     * metodo ver usuarios.
+     * 
+     * Podemos ver a todos los usuarios que hemos ingresado.
+     * 
+     * @param usuarios 
+     */
+    
     public void verUsuarios(List<Usuario> usuarios) {
 
         for (Usuario usuario : usuarios) {

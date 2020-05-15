@@ -1,9 +1,16 @@
 package ec.edu.ups.dao;
 
+
 /**
- *
- * @author santi
+ * Clase TelfonoDao
+ * 
+ * clase implementada del Crud ITelefonoDAO nos permiten añadir los metodos
+ * en otros clases para poder crear, leer, actualizar, borrar
+ * 
+ * 
  */
+
+ 
 import ec.edu.ups.idao.ITelefonoDAO;
 import ec.edu.ups.modelo.Telefono;
 import java.util.ArrayList;
@@ -12,17 +19,27 @@ import java.util.List;
 
 /**
  *
- * @author santi
+ * @author santiago Cabrera
  */
 public class TelefonoDAO implements ITelefonoDAO {
 
     private List<Telefono> listaTelefonos;
 
+    
+    //Contructor
     public TelefonoDAO() {
 
         listaTelefonos = new ArrayList<>();
 
     }
+    
+    /**
+     * Metodo create.
+     * 
+     * creamos al telefono.
+     * 
+     * @param telefono 
+     */
 
     @Override
     public void create(Telefono telefono) {
@@ -31,6 +48,15 @@ public class TelefonoDAO implements ITelefonoDAO {
 
     }
 
+    /**
+     * Metodo read.
+     * 
+     * lee la lista de telefonos.
+     * 
+     * @param codigo
+     * @return 
+     */
+    
     @Override
     public Telefono read(int codigo) {
 
@@ -46,6 +72,15 @@ public class TelefonoDAO implements ITelefonoDAO {
 
     }
 
+    
+    /**
+     * Metodo update.
+     * 
+     * Actualiza el telefono indicado por el codigo.
+     * 
+     * 
+     * @param telefono 
+     */
     @Override
     public void update(Telefono telefono) {
 
@@ -63,6 +98,16 @@ public class TelefonoDAO implements ITelefonoDAO {
         }
 
     }
+    
+    
+    /**
+     * Metodo delete.
+     * 
+     * Elimina el telefono que nosotros indiquemos en consola
+     * 
+     * 
+     * @param telefono 
+     */
 
     @Override
     public void delete(Telefono telefono) {
@@ -83,6 +128,7 @@ public class TelefonoDAO implements ITelefonoDAO {
 
     }
 
+    //metodo sobreesctiro.
     @Override
     public List<Telefono> findAll() {
         return listaTelefonos;

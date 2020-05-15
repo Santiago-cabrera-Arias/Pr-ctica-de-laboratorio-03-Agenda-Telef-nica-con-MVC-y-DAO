@@ -1,3 +1,13 @@
+
+/**
+ * Clase telefono.
+ * 
+ * Calse encergada de pasar los atributos a las demas calses.
+ * 
+ * 
+ */
+
+
 package ec.edu.ups.modelo;
 
 /**

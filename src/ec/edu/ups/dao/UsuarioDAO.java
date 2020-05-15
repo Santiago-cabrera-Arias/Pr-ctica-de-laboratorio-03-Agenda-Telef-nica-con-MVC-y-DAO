@@ -1,5 +1,16 @@
 package ec.edu.ups.dao;
 
+/**
+ * Clase UsuarioDao
+ * 
+ * clase implementada del Crud IUsuairoDao nos permiten añadir los metodos
+ * en otros clases para poder crear, leer, actualizar, borrar
+ * 
+ * 
+ */
+
+
+
 import ec.edu.ups.idao.IUsuarioDAO;
 import ec.edu.ups.modelo.Usuario;
 import java.util.ArrayList;
@@ -8,7 +19,7 @@ import java.util.List;
 
 /**
  *
- * @author santi
+ * @author santiago Cabrera
  */
 public class UsuarioDAO implements IUsuarioDAO {
 

@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author santi
+ * @author santiago Cabrera
  */
 public class ControladorUsuario {
 
@@ -25,6 +25,8 @@ public class ControladorUsuario {
     private ITelefonoDAO telefonoDao;
     private IUsuarioDAO usuarioDao;
 
+    //Constructor
+    
     public ControladorUsuario(VistaUsuario vistaUsuario, VistaTelefono vistaTelefono, TelefonoDAO telefonoDao, UsuarioDAO usuarioDao) {
         this.vistaUsuario = vistaUsuario;
         this.vistaTelefono = vistaTelefono;
@@ -34,6 +36,14 @@ public class ControladorUsuario {
 
     }
 
+    /**
+     * Metodo registrar usuario.
+     * 
+     * 
+     * 
+     * 
+     */
+    
     public void registrarUsuario() {
 
         usuario = vistaUsuario.registrarseUsu();

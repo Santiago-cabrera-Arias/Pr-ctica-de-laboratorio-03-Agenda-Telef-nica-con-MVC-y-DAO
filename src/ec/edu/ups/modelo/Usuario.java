@@ -1,14 +1,21 @@
 
 package ec.edu.ups.modelo;
 
-import com.sun.javafx.scene.control.skin.VirtualFlow;
+/**
+ * Clase Usuario.
+ * 
+ * Tiene todos los atributos que se utilizan en las demas clases.
+ * Tiene agragacion con la clase telefono.
+ *
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 /**
  *
- * @author santi
+ * @author santiago Cabrera
  */
 public class Usuario {
     
@@ -142,6 +149,8 @@ public class Usuario {
     }
     
     
+    //Metodo hashCode y equals
+    
     @Override
     public int hashCode() {
         int hash = 5;
@@ -166,7 +175,7 @@ public class Usuario {
     
     
     
-
+    //Metodo to String
     @Override
     public String toString() {
         return "Usuario{" + "cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", contrasena=" + contrasena + ", Telefono =" +telefonos.toString()+ '}';
