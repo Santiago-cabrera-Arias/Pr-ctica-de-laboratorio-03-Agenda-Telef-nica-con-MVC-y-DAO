@@ -32,7 +32,7 @@ public class UsuarioDAO implements IUsuarioDAO {
 
         for (Usuario usuario : listaUsuarios) {
 
-            if (usuario.getCedula() == cedula) {
+            if (usuario.getCedula() == null ? cedula == null : usuario.getCedula().equals(cedula)) {
 
                 return usuario;
             }
@@ -82,11 +82,23 @@ public class UsuarioDAO implements IUsuarioDAO {
     }
 
     @Override
-    public List<Usuario> findAll() {
+    public boolean inicioSesion(String correo, String contrasena) {
 
+        for (Usuario usuario : listaUsuarios) {
+            if (usuario.getCorreo().equals(correo) && usuario.getContrasena().equals(contrasena)) {
+
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    @Override
+    public List<Usuario> findAll() {
         return listaUsuarios;
     }
-    
-  
+
+   
 
 }

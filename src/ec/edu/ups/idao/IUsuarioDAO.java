@@ -21,6 +21,7 @@ public interface IUsuarioDAO {
     public void update (Usuario usuario);
     public void delete (Usuario usuario);
     public List<Usuario> findAll();
+    public boolean inicioSesion (String correo,String contrasena);
     
     
     

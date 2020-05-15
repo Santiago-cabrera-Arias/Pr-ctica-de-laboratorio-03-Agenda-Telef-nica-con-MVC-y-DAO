@@ -28,7 +28,7 @@ public class ControladorUsuario {
     public ControladorUsuario(VistaUsuario vistaUsuario, VistaTelefono vistaTelefono, TelefonoDAO telefonoDao, UsuarioDAO usuarioDao) {
         this.vistaUsuario = vistaUsuario;
         this.vistaTelefono = vistaTelefono;
-        
+
         this.telefonoDao = telefonoDao;
         this.usuarioDao = usuarioDao;
 
@@ -41,39 +41,44 @@ public class ControladorUsuario {
 
     }
 
-    public void iniciarSesion() {
-
-            usuario = vistaUsuario.IniciarSesion();
-            vistaUsuario.verUsuario(usuario);
-       
-    }
-
     public void buscarUsuario() {
 
         String cedula = vistaUsuario.buscarUsuario();
         usuario = usuarioDao.read(cedula);
         vistaUsuario.verUsuario(usuario);
-        
 
+    }
+
+    public boolean iniciarSesion() {
+
+        String correo = vistaUsuario.iniciarSesionCorreo();
+        String contrasena = vistaUsuario.inicioSesionContrasena();
+        boolean comp = usuarioDao.inicioSesion(correo, contrasena);
+        return comp;
+        
     }
 
     public void modificarUsuario() {
 
         usuario = vistaUsuario.modificarUsu();
         usuarioDao.update(usuario);
-        
+
     }
 
     public void eliminarUsuario() {
 
         usuario = vistaUsuario.eliminarUsuario();
         usuarioDao.delete(usuario);
-        
+
     }
-    
-   
-    
- 
+
+    public void listarTelefono() {
+
+        String cedula = vistaUsuario.listarTelefono();
+        usuarioDao.read(cedula);
+        vistaTelefono.verTelefono(telefono);
+    }
+
     public void verUsuarios() {
 
         List<Usuario> usuarios;

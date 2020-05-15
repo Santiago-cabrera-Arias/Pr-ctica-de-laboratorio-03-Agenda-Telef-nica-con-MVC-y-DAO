@@ -6,7 +6,7 @@
 package ec.edu.ups.controlador;
 
 import ec.edu.ups.dao.TelefonoDAO;
-import ec.edu.ups.dao.UsuarioDAO;
+
 import ec.edu.ups.idao.ITelefonoDAO;
 import ec.edu.ups.modelo.Telefono;
 import ec.edu.ups.vista.VistaTelefono;
@@ -24,7 +24,7 @@ public class ControladorTelefono {
     private Telefono telefono;
     private ITelefonoDAO telefonoDAO;
 
-    public ControladorTelefono(VistaTelefono vistaTelefonoo, TelefonoDAO telefonoDAO) {
+    public ControladorTelefono(VistaTelefono vistaTelefono, TelefonoDAO telefonoDAO) {
         this.vistaTelefono = vistaTelefono;
         this.telefonoDAO =  telefonoDAO ;
     }

@@ -4,7 +4,6 @@ import ec.edu.ups.controlador.ControladorTelefono;
 import ec.edu.ups.controlador.ControladorUsuario;
 import ec.edu.ups.dao.TelefonoDAO;
 import ec.edu.ups.dao.UsuarioDAO;
-import ec.edu.ups.idao.ITelefonoDAO;
 import ec.edu.ups.vista.VistaTelefono;
 import ec.edu.ups.vista.VistaUsuario;
 import java.util.Scanner;
@@ -59,54 +58,86 @@ public class Test {
             if (seleccion == 1) {
 
                 controladorUsuario.registrarUsuario();
-                controladorUsuario.registrarUsuario();
                 controladorUsuario.verUsuarios();
 
             } else if (seleccion == 2) {
 
-                controladorUsuario.iniciarSesion();
-                controladorUsuario.verUsuarios();
+                boolean comp = controladorUsuario.iniciarSesion();
+                if(comp == true){
+                    System.out.println("Iniciado Sesion");
+                    int opcion;
+                    do {
 
-                int opcion = 0;
+                    System.out.println("\nIngrese una opcion");
+                    System.out.println("1.registrar telefono");
+                    System.out.println("2.modifiar telefono");
+                    System.out.println("3.Buscar telefono");
+                    System.out.println("5.listar telefono");
+                    System.out.println("6.Atras");
 
-                System.out.println("\nIngrese una opcion");
-                System.out.println("1.Modificar");
-                System.out.println("2.Eliminar");
-                System.out.println("3.Buscar");
-                System.out.println("4.Listar");
+                    opcion = sc.nextInt();
 
-                switch (opcion) {
+                    switch (opcion) {
 
-                    case 1:
+                        case 1:
 
-                        controladorUsuario.modificarUsuario();
-                        controladorUsuario.verUsuarios();
+                            controladorTelefono.registrarTel();
+                            controladorTelefono.verTelefonos();
 
-                    case 2:
+                            break;
 
-                        controladorUsuario.eliminarUsuario();
-                        controladorUsuario.verUsuarios();
+                        case 2:
 
-                    case 3:
+                            controladorTelefono.eliminarTel();
+                            controladorTelefono.verTelefonos();
 
-                        controladorUsuario.buscarUsuario();
-                        controladorUsuario.verUsuarios();
+                            break;
 
-                    case 4:
-                        System.out.println("4.Listar ");
+                        case 3:
 
+                           controladorTelefono.verTelefono();
+                           
+
+                            break;
+
+                        case 4:
+
+                            
+                            
+                            break;
+                            
+                        case 5:
+                            
+                            
+                            
+                            break;
+
+                        case 6:
+
+                            opcion = 6;
+
+                            break;
+
+                        default:
+                            System.out.println("Ingrese una opcion dentro del rango");
+                    }
+
+                } while (opcion != 6);
+                    
+                }else{
+                    
+                    System.out.println("Ingrese una contrasena o correo validos");
                 }
+                
+                
 
             } else if (seleccion == 3) {
 
-                System.out.println("---------");
-                System.out.println("Gracias");
-                System.out.println("----------");
-
                 bandera = 2;
+
             }
 
         } while (bandera != 2);
-                
+
     }
 }

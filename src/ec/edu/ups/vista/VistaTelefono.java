@@ -25,8 +25,7 @@ public class VistaTelefono {
         
         sc = new Scanner(System.in);
         System.out.println("Ingresa el codigo del telefono");
-        int codigo = sc.nextInt();
-        
+        int codigo = sc.nextInt();        
         System.out.println("Ingrese el numero de telefono");
         String telefono = sc.next();
         System.out.println("Ingrese el tipo de telefono");
@@ -46,6 +45,8 @@ public class VistaTelefono {
         String operadora = sc.next();
         return new Telefono(codigo, telefono, tipo, operadora);
     }
+    
+    
 
     public Telefono eliminarTel() {
         sc = new Scanner(System.in);
@@ -60,7 +61,7 @@ public class VistaTelefono {
         int codigo = sc.nextInt();
         return codigo;
     }
-
+  
     public void verTelefono(Telefono telefono) {
         System.out.println("Datos del telefono: " + telefono);
     }

@@ -1,4 +1,3 @@
-
 package ec.edu.ups.modelo;
 
 /**
@@ -6,20 +5,20 @@ package ec.edu.ups.modelo;
  * @author santi
  */
 public class Telefono {
-    
-      private int codigo;
+
+    private int codigo;
     private String numero;
     private String tipo;
     private String operadora;
+
+    public Telefono() {
+    }
 
     public Telefono(int codigo, String numero, String tipo, String operadora) {
         this.codigo = codigo;
         this.numero = numero;
         this.tipo = tipo;
         this.operadora = operadora;
-    }
-
-    public Telefono() {
     }
 
     public int getCodigo() {
@@ -80,8 +79,5 @@ public class Telefono {
     public String toString() {
         return "Telefono{" + "codigo=" + codigo + ", numero=" + numero + ", tipo=" + tipo + ", operadora=" + operadora + '}';
     }
-    
-    
-    
-    
+
 }

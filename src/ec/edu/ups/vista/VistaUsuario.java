@@ -5,8 +5,8 @@
  */
 package ec.edu.ups.vista;
 
+import ec.edu.ups.dao.UsuarioDAO;
 import ec.edu.ups.modelo.Usuario;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,18 +16,18 @@ import java.util.Scanner;
  */
 public class VistaUsuario {
 
-    private Scanner sc ;
-    
-    public VistaUsuario(){
-        
+    private Scanner sc;
+
+    public VistaUsuario() {
+
         sc = new Scanner(System.in);
-   
+
     }
 
     public Usuario registrarseUsu() {
 
-        sc = new Scanner (System.in);
-        
+        sc = new Scanner(System.in);
+
         System.out.println("Ingrese su cedula");
         String cedula = sc.next();
         System.out.println("Ingrese su nombre");
@@ -42,22 +42,31 @@ public class VistaUsuario {
         return new Usuario(cedula, nombre, apellido, correo, contrasena);
     }
 
-    public Usuario IniciarSesion() {
-        
-        sc = new Scanner (System.in);
+    public String iniciarSesionCorreo() {
+
+        sc = new Scanner(System.in);
 
         System.out.println("Ingrese su correo");
         String correo = sc.next();
-        System.out.println("Ingrese su contrasena");
+
+        return correo;
+
+    }
+
+    public String inicioSesionContrasena() {
+
+        sc = new Scanner(System.in);
+
+        System.out.println("Ingrese la contrasena ");
         String contrasena = sc.next();
 
-        return new Usuario(correo, contrasena,null,null,null);
+        return contrasena;
 
     }
 
     public Usuario modificarUsu() {
-        
-        sc = new Scanner (System.in);
+
+        sc = new Scanner(System.in);
 
         System.out.println("modificar datos ");
 
@@ -80,8 +89,8 @@ public class VistaUsuario {
 
     public Usuario eliminarUsuario() {
 
-        sc = new Scanner (System.in);
-        
+        sc = new Scanner(System.in);
+
         System.out.println("Eliminar usuario:");
 
         System.out.println("Ingrese el numero de cedula del usuario a eliminar");
@@ -92,8 +101,8 @@ public class VistaUsuario {
     }
 
     public String buscarUsuario() {
-        
-        sc = new Scanner (System.in);
+
+        sc = new Scanner(System.in);
 
         System.out.println("Ingrese el numero de cedula del usuario a buscar");
         String cedula = sc.next();
@@ -104,8 +113,8 @@ public class VistaUsuario {
 
     public String listarTelefono() {
 
-        sc = new Scanner (System.in);
-        
+        sc = new Scanner(System.in);
+
         System.out.println("listar telefonos");
 
         System.out.println("Ingrese el numero de cedula");
